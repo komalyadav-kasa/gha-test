@@ -1,0 +1,20 @@
+name: 
+
+on:
+  workflow-dispatch
+
+env:
+  cloud: aws
+
+jobs:
+  greeting_job: 
+    runs-on: ubuntu-latest
+    env:
+      name: Komal
+    steps:
+      - name: Variables Scope Demo
+      run: echo "$greetings, $name is working on $cloud"
+      env:
+        greetings: Hello
+     
+    
