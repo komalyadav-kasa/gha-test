@@ -1,0 +1,19 @@
+name: Workflow Variables
+
+on:
+  workflow_dispatch 
+
+env:
+  cloud: aws
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    env:
+      greeting: Hello
+    steps:
+      - name: Demonstrating types of variables
+        run: echo "$greeting, $name is working on $cloud"
+        env:
+          name: Komal
+  
