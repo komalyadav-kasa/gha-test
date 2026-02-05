@@ -3,6 +3,12 @@ on:
   push:
     branches: 
       - main
+  workflow_dispatch: 
+    inputs:
+      name:
+        description: 'Name'
+        required: true
+        default: 'Komal'
 
 jobs:
   hello:
