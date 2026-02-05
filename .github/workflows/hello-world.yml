@@ -6,7 +6,7 @@ on:
   workflow_dispatch: 
     inputs:
       name_variable:
-        description: 'Please enter the name variable'
+        description: 'Please enter the name'
         required: true
         default: 'Komal'
 
