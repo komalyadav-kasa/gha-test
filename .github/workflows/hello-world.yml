@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello Name
-        run: echo "Hello ${{ github.event.inputs.name_variable || 'Komal'}}"
+        run: echo "Hello ${{ github.event.inputs.name_variable}}"
