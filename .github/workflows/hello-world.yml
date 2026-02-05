@@ -8,6 +8,7 @@ on:
       name_variable:
         description: 'Please enter the name variable'
         required: true
+        default: 'Komal'
 
 jobs:
   hello:
