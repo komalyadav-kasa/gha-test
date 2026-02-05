@@ -7,7 +7,6 @@ on:
     inputs:
       name_variable:
         description: 'Please enter the name'
-        required: true
         default: 'Komal'
 
 jobs:
