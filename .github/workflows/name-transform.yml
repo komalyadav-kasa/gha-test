@@ -1,0 +1,38 @@
+name: Name Transform
+on:
+  workflow_dispatch:
+    inputs:
+      name_variable:
+        description: 'Inputs name'
+        default: 'Komal'
+
+jobs:
+  name-print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Name
+        run: echo "${{ inputs.name_variable }}"
+  transform:
+    runs-on: ubuntu-latest
+    outputs: 
+      uppercase: "${{ steps.capitalize.outputs.upper }}"
+    steps:
+      - name: Capitalize input name
+        id: capitalize
+        run: |
+          name_variable = "${{ inputs.name_variable }}"
+          upper = ${name_variable^^} >> "$GITHUB_OUTPUT"
+   uppercase-print:
+     runs-on: ubuntu-latest
+     needs: transform
+     steps:
+      - name: Print the capitalized name of the previous job
+        env:
+          upper-display: "${{ needs.transform.outputs.uppercase }}"
+        run: echo "$upper-display"
+          
+          
+
+      
+        
+
