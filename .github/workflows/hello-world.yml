@@ -12,6 +12,11 @@ on:
 jobs:
   hello:
     runs-on: ubuntu-latest
+    env:
+      name_env_var: "Shiva"
     steps:
       - name: Print Hello Name
         run: echo "Hello ${{ inputs.name_variable }}"
+      - name: Print Hello name in Env variable
+        run: echo "Hello $name_env_var "
+      
