@@ -8,7 +8,7 @@ on:
       name_variable:
         description: 'Please enter the name'
         default: 'Komal'
-     sandwich_variable:
+      sandwich_variable:
        description: 'Favourite sandwich'
        default: 'Cubano'
 
