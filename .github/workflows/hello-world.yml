@@ -23,5 +23,5 @@ jobs:
       - name: Print Hello name in Env variable
         run: echo "Hello $name_env_var "
       - name: Print Favourite Sandwich 
-        run: echo "${{ inputs.name_variable }}"'s favourite sandwich is "${{ inputs.sandwich_variable }}"
+        run: echo "${{ inputs.name_variable }}'s favourite sandwich is ${{ inputs.sandwich_variable }}"
       
