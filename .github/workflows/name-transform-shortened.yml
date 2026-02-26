@@ -1,0 +1,28 @@
+name: Name Transform Shortened
+
+on:
+  workflow_dispatch:
+    inputs:
+      name_variable:
+        description: "Input name"
+        default: "Komal"
+        type: string
+
+jobs:
+  name-print:
+    runs-on: ubuntu-latest
+    outputs:
+      uppercase: ${{ steps.capitalize.outputs.upper }}
+    steps:
+      - name: Print Name
+        run: echo "${{ inputs.name_variable }}"
+
+      - name: Capitalize input name
+        id: capitalize
+        run: |
+          name_variable="${{ inputs.name_variable }}"
+          upper="${name_variable^^}"
+          echo "upper=$upper" >> "$GITHUB_OUTPUT"
+          
+      - name: Print capitalized name
+        run: echo "${{ steps.capitalize.outputs.upper }}"
